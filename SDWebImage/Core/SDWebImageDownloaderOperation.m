@@ -388,7 +388,7 @@ didReceiveResponse:(NSURLResponse *)response
     BOOL supportProgressive = (self.options & SDWebImageDownloaderProgressiveLoad) && !self.decryptor;
     if (supportProgressive) {
         // Get the image data
-        NSData *imageData = [self.imageData copy];
+        NSData *imageData = self.imageData;
         
         // keep maximum one progressive decode process during download
         if (self.coderQueue.operationCount == 0) {
